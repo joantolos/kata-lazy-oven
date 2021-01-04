@@ -8,12 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "engines": {
-    "node": "12.0",
-    "npm": "3.10.9"
+    "node": "~14.14.0",
+    "npm": "~6.14.18"
   },
   "dependencies": {
     "@angular/cli": "~11.0.5",
