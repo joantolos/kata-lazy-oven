@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SettingsComponent } from './settings/settings.component';
-import { StepsComponent } from './steps/steps.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { StepsComponent } from './components/steps/steps.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsService } from './services/settings.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { StepsComponent } from './steps/steps.component';
     StepsComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot([
       {path: 'settings', component: SettingsComponent},
@@ -23,7 +26,7 @@ import { StepsComponent } from './steps/steps.component';
       {path: '**', component: PageNotFoundComponent}
     ]),
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
