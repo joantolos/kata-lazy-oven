@@ -1,20 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SettingsComponent } from './settings/settings.component';
+import { StepsComponent } from './steps/steps.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrisisListComponent,
-    HeroesListComponent
+    PageNotFoundComponent,
+    SettingsComponent,
+    StepsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot([
+      {path: 'settings', component: SettingsComponent},
+      {path: 'steps', component: StepsComponent},
+      {path: '', redirectTo: '/settings', pathMatch: 'full'},
+      {path: '**', component: PageNotFoundComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

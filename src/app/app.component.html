@@ -1,3 +1,12 @@
-<h1>Angular Router Sample</h1>
-<app-crisis-list></app-crisis-list>
-<app-heroes-list></app-heroes-list>
+<div class="navbar-brand">
+  <a class="navbar-item">
+    <img src="assets/logo.png">
+  </a>
+</div>
+
+<router-outlet></router-outlet>
+
+<nav>
+  <a class="button" routerLink="/settings" routerLinkActive="activebutton">Settings</a> |
+  <a class="button" routerLink="/steps" routerLinkActive="activebutton">Steps</a>
+</nav>
