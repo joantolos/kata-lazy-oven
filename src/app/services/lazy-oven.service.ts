@@ -20,7 +20,6 @@ export class LazyOvenService {
   }
 
   getRecipe() {
-    console.log('########### Settings: ' + JSON.stringify(this.settings));
     const end = new Time(this.settings.eat.hours, this.settings.eat.minutes);
     const out = this.substractTimes(this.toText(this.settings.eat), '00:' + this.settings.cool + ':00');
     const insert = this.substractTimes(this.toText(out), this.toText(this.settings.cook));
@@ -30,18 +29,20 @@ export class LazyOvenService {
   }
 
   substractTimes(start: string, end: string): Time {
-    const starts = start.split(':');
-    const startsSeconds = (+starts[0]) * 60 * 60 + (+starts[1]) * 60 + (+starts[2]);
-    const ends = end.split(':');
-    const endsSeconds = (+ends[0]) * 60 * 60 + (+ends[1]) * 60 + (+ends[2]);
+    const startsSeconds = this.getSeconds(start.split(':')[0], start.split(':')[1]);
+    const endsSeconds = this.getSeconds(end.split(':')[0], end.split(':')[1]);
     const date = new Date(1970, 0, 1);
     date.setSeconds(startsSeconds - endsSeconds);
-    const dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1").slice(0, -3);
+    const dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
     return new Time(dateString.split(':')[0], dateString.split(':')[1]);
   }
 
+  private getSeconds(startHours: string, startMinutes: string) {
+    return (+startHours) * 60 * 60 + (+startMinutes) * 60;
+  }
+
   private toText(time: Time) {
-    return time.hours + ':' + time.minutes + ':00';
+    return time.hours + ':' + time.minutes;
   }
 
 }

@@ -19,6 +19,6 @@ describe('Lazy oven service', () => {
   }));
 
   it('should substract times', inject([LazyOvenService], (service: LazyOvenService) => {
-    expect(service.substractTimes('22:00:00', '00:15:00')).toEqual(new Time('21', '45'));
+    expect(service.substractTimes('22:00', '00:15')).toEqual(new Time('21', '45'));
   }));
 });
