@@ -3,8 +3,8 @@ import { Settings } from '../../entities/settings';
 import { LazyOvenService } from '../../services/lazy-oven.service';
 import { Time } from "../../entities/time";
 import { defaultSettings } from '../../config/config';
-import { hours } from '../../config/config';
-import { minutes } from '../../config/config';
+import { hoursConfig } from '../../config/config';
+import { minutesConfig } from '../../config/config';
 
 @Component({
   selector: 'app-settings',
@@ -13,10 +13,13 @@ import { minutes } from '../../config/config';
 })
 export class SettingsComponent implements OnInit {
 
+  hours = hoursConfig;
+  minutes = minutesConfig;
+
   selectedEatHours: number = defaultSettings.eat.hours;
   selectedEatMinutes: number = defaultSettings.eat.minutes;
-  hours = hours;
-  minutes = minutes;
+  selectedCookHours: number = defaultSettings.cook.hours;
+  selectedCookMinutes: number = defaultSettings.cook.minutes;
 
   constructor(private lazyOvenService: LazyOvenService) { }
 
@@ -26,7 +29,7 @@ export class SettingsComponent implements OnInit {
   add(): void {
     const settings = new Settings(
       new Time(this.selectedEatHours, this.selectedEatMinutes),
-      new Time(this.selectedEatHours, this.selectedEatMinutes),
+      new Time(this.selectedCookHours, this.selectedCookMinutes),
       defaultSettings.heat,
       defaultSettings.cool);
 

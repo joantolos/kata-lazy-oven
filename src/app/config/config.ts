@@ -33,7 +33,7 @@ export const defaultRecipe: Recipe = {
   }
 };
 
-export const hours = [
+export const hoursConfig = [
   {value: 0, viewValue: '00'},
   {value: 1, viewValue: '01'},
   {value: 2, viewValue: '02'},
@@ -60,7 +60,7 @@ export const hours = [
   {value: 23, viewValue: '23'}
 ];
 
-export const minutes = [
+export const minutesConfig = [
   { value: 0, viewValue: '00' },
   { value: 1, viewValue: '01' },
   { value: 2, viewValue: '02' },
@@ -122,4 +122,4 @@ export const minutes = [
   { value: 58, viewValue: '58' },
   { value: 59, viewValue: '59' },
   { value: 60, viewValue: '60' }
-];;
+];

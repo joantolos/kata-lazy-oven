@@ -1,25 +1,42 @@
 <div>
 
+  <p> Select your meal time </p>
   <form>
     <mat-form-field appearance="fill">
-      <mat-label>Eat hour</mat-label>
       <mat-select [(ngModel)]="selectedEatHours" name="eatHour">
         <mat-option *ngFor="let hour of hours" [value]="hour.value">
           {{hour.viewValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <p> Selected hour: {{selectedEatHours}} </p>
 
     <mat-form-field appearance="fill">
-      <mat-label>Eat minutes</mat-label>
       <mat-select [(ngModel)]="selectedEatMinutes" name="eatHour">
         <mat-option *ngFor="let minute of minutes" [value]="minute.value">
           {{minute.viewValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <p> Selected minutes: {{selectedEatMinutes}} </p>
+
+  </form>
+
+  <p> Select your cooking time </p>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-select [(ngModel)]="selectedCookHours" name="eatHour">
+        <mat-option *ngFor="let hour of hours" [value]="hour.value">
+          {{hour.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-select [(ngModel)]="selectedCookMinutes" name="eatHour">
+        <mat-option *ngFor="let minute of minutes" [value]="minute.value">
+          {{minute.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
   </form>
 

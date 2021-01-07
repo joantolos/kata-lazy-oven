@@ -1,0 +1,9 @@
+::ng-deep .mat-select{
+  opacity: 0.75;
+  /*background-color: red;*/
+}
+
+::ng-deep .mat-form-field{
+  width:60px;
+  /*background-color: red;*/
+}
