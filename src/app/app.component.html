@@ -1,7 +1,27 @@
-<div class="navbar-brand">
-  <a class="navbar-item">
-    <img src="assets/logo.png">
-  </a>
-</div>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Lobster&display=swap" rel="stylesheet">
 
-<router-outlet></router-outlet>
+<style>
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Lobster', cursive;
+  }
+</style>
+
+<html>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="lazy">Lazy</div>
+        <div class="icon"><img src="../assets/pizza.svg" alt="pizza"></div>
+        <div class="oven">Oven</div>
+      </div>
+      <div class="tagLine">burning pizzas since 2020</div>
+    </header>
+    <nav>navigation</nav>
+    <aside>side bar</aside>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <footer class="footer">footer</footer>
+  </body>
+</html>

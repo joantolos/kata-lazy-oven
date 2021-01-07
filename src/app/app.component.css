@@ -1,9 +1,39 @@
+.lazy{
+  font-size: 500%;
+  margin-left: auto;
+}
+
+.oven{
+  font-size: 500%;
+  margin-right: auto;
+}
+
+.tagLine{
+  font-size: 100%;
+  text-align: center;
+}
+
+.icon{
+}
+
+.header {
+  padding: 15px;
+  background: #f9f1dc;
+}
+
+.footer {
+  padding: 15px;
+  background: #f9f1dc;
+}
+
+.container {
+  display: flex;
+}
+
 ::ng-deep .mat-select{
   opacity: 0.75;
-  /*background-color: red;*/
 }
 
 ::ng-deep .mat-form-field{
   width:60px;
-  /*background-color: red;*/
 }
