@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Settings } from '../entities/settings';
-import { Recipe } from '../entities/recipe';
-import { defaultSettings } from '../config/config';
-import { defaultRecipe } from '../config/config';
-import { Time } from '../entities/time';
+import {Injectable} from '@angular/core';
+import {Settings} from '../entities/settings';
+import {Recipe} from '../entities/recipe';
+import {defaultRecipe, defaultSettings} from '../config/config';
+import {Time} from '../entities/time';
 
 @Injectable()
 export class LazyOvenService {
@@ -22,34 +21,27 @@ export class LazyOvenService {
 
   getRecipe() {
     console.log('########### Settings: ' + JSON.stringify(this.settings));
-    this.recipe.start = new Time('333', '112312');
-    this.recipe.insert = new Time('333', '112312');
-    this.recipe.out = new Time('333', '112312');
-    this.recipe.end = new Time('333', '112312');
-    return this.recipe;
+    const end = new Time(this.settings.eat.hours, this.settings.eat.minutes);
+    const out = this.substractTimes(this.toText(this.settings.eat), '00:' + this.settings.cool + ':00');
+    const insert = this.substractTimes(this.toText(out), this.toText(this.settings.cook));
+    const start = this.substractTimes(this.toText(insert), '00:' + this.settings.heat + ':00');
+
+    return new Recipe(start, insert, out, end);
   }
 
-  addTimes(start: string, end: string) {
-    const starts = start.split(":");
+  substractTimes(start: string, end: string): Time {
+    const starts = start.split(':');
     const startsSeconds = (+starts[0]) * 60 * 60 + (+starts[1]) * 60 + (+starts[2]);
-    const ends = end.split(":");
+    const ends = end.split(':');
     const endsSeconds = (+ends[0]) * 60 * 60 + (+ends[1]) * 60 + (+ends[2]);
-
-    const date = new Date(1970,0,1);
-    date.setSeconds(startsSeconds + endsSeconds);
-
-    return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
-  }
-
-  substractTimes(start: string, end: string) {
-    const starts = start.split(":");
-    const startsSeconds = (+starts[0]) * 60 * 60 + (+starts[1]) * 60 + (+starts[2]);
-    const ends = end.split(":");
-    const endsSeconds = (+ends[0]) * 60 * 60 + (+ends[1]) * 60 + (+ends[2]);
-
-    const date = new Date(1970,0,1);
+    const date = new Date(1970, 0, 1);
     date.setSeconds(startsSeconds - endsSeconds);
-
-    return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+    const dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1").slice(0, -3);
+    return new Time(dateString.split(':')[0], dateString.split(':')[1]);
   }
+
+  private toText(time: Time) {
+    return time.hours + ':' + time.minutes + ':00';
+  }
+
 }
