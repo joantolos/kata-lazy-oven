@@ -1,14 +1,14 @@
 <div>
   <label>Eating time:
-    <input #eating />
+    <input type="number" #eating />
   </label>
 
   <label>Cooking time:
-    <input #cooking />
+    <input type="number" #cooking />
   </label>
 
   <nav>
-    <a class="button" routerLink="/steps" routerLinkActive="activebutton" (click)="add(eating.value, cooking.value)">Steps</a>
+    <a class="button" routerLink="/steps" routerLinkActive="activebutton" (click)="add(123, 456, 0, 15, 10, 0)">Steps</a>
   </nav>
 
 </div>

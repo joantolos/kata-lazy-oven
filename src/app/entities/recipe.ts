@@ -1,13 +1,16 @@
-export class Recipe {
-  start: string;
-  mealIn: string;
-  mealOut: string;
-  end: string;
+import { Time } from './time';
 
-  constructor(start: string, mealIn: string, mealOut: string, end: string) {
+export class Recipe {
+
+  start: Time;
+  insert: Time;
+  out: Time;
+  end: Time;
+
+  constructor(start: Time, insert: Time, out: Time, end: Time) {
     this.start = start;
-    this.mealIn = mealIn;
-    this.mealOut = mealOut;
+    this.insert = insert;
+    this.out = out;
     this.end = end;
   }
 }

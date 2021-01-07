@@ -1,19 +1,19 @@
 import {inject, TestBed} from '@angular/core/testing';
 
-import {SettingsService} from './settings.service';
+import {LazyOvenService} from './lazy-oven.service';
 import {HttpClientModule} from "@angular/common/http";
 
 describe('Lazy oven service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SettingsService],
+      providers: [LazyOvenService],
       imports: [
         HttpClientModule
       ]
     });
   });
 
-  it('should be created', inject([SettingsService], (service: SettingsService) => {
+  it('should be created', inject([LazyOvenService], (service: LazyOvenService) => {
     expect(service).toBeTruthy();
   }));
 });

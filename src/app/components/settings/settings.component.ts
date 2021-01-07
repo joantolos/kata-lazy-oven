@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Settings } from '../../entities/settings';
-import { SettingsService } from '../../services/settings.service';
+import { LazyOvenService } from '../../services/lazy-oven.service';
+import { Time } from "../../entities/time";
 
 @Component({
   selector: 'app-settings',
@@ -9,13 +10,19 @@ import { SettingsService } from '../../services/settings.service';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor(private settingsService: SettingsService) { }
+  constructor(private lazyOvenService: LazyOvenService) { }
 
   ngOnInit(): void {
   }
 
-  add(eating: string, cooking: string): void {
-    this.settingsService.addRecipe({ eating, cooking } as Settings);
+  add(eatHours: number, eatMinutes: number, cookHours: number, cookMinutes: number, heat: number, cool: number): void {
+    const settings = new Settings(
+      new Time(eatHours, eatMinutes),
+      new Time(cookHours, cookMinutes),
+      heat,
+      cool);
+
+    this.lazyOvenService.addSettings(settings);
   }
 
 }
