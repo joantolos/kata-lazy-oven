@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RecipeComponent } from './recipe.component';
+import {LazyOvenService} from "../../services/lazy-oven.service";
 
 describe('Recipe component', () => {
   let component: RecipeComponent;
@@ -8,7 +9,8 @@ describe('Recipe component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecipeComponent ]
+      declarations: [ RecipeComponent ],
+      providers: [ LazyOvenService ]
     })
     .compileComponents();
   });

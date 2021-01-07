@@ -1,9 +1,9 @@
 export class Time {
 
-  hours: number = 0;
-  minutes: number = 0;
+  hours;
+  minutes;
 
-  constructor(hours: number, minutes: number) {
+  constructor(hours: string, minutes: string) {
     this.hours = hours;
     this.minutes = minutes;
   }

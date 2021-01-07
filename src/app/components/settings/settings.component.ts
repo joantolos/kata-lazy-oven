@@ -16,10 +16,10 @@ export class SettingsComponent implements OnInit {
   hours = hoursConfig;
   minutes = minutesConfig;
 
-  selectedEatHours: number = defaultSettings.eat.hours;
-  selectedEatMinutes: number = defaultSettings.eat.minutes;
-  selectedCookHours: number = defaultSettings.cook.hours;
-  selectedCookMinutes: number = defaultSettings.cook.minutes;
+  selectedEatHours: string = defaultSettings.eat.hours;
+  selectedEatMinutes: string = defaultSettings.eat.minutes;
+  selectedCookHours: string = defaultSettings.cook.hours;
+  selectedCookMinutes: string = defaultSettings.cook.minutes;
 
   constructor(private lazyOvenService: LazyOvenService) { }
 
