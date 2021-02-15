@@ -13,3 +13,11 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+::ng-deep .mat-select{
+  opacity: 0.75;
+}
+
+::ng-deep .mat-form-field{
+  width:60px;
+}

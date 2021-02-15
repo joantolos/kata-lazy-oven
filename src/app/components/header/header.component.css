@@ -6,3 +6,28 @@
   width: 100%;
   text-align: center;
 }
+
+.tagLine{
+  text-align: center;
+}
+
+.container {
+  justify-content: center;
+  display: flex;
+}
+
+.lazy{
+  font-size: 400%;
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.icon{
+}
+
+.oven{
+  font-size: 400%;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
