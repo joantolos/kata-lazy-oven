@@ -14,6 +14,10 @@
   transform: translateY(-50%);
 }
 
+.font {
+  font-family:Lobster, serif;
+}
+
 ::ng-deep .mat-select{
   opacity: 0.75;
 }
