@@ -10,6 +10,7 @@ import { LazyOvenService } from './services/lazy-oven.service';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       {path: '**', component: PageNotFoundComponent}
     ]),
     MatSelectModule,
+    MatButtonModule,
     FormsModule,
   ],
   providers: [LazyOvenService],

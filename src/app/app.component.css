@@ -1,15 +1,8 @@
-.lazy{
+.logo{
   font-size: 500%;
-  margin-left: auto;
-}
-
-.oven{
-  font-size: 500%;
-  margin-right: auto;
 }
 
 .tagLine{
-  font-size: 100%;
   text-align: center;
 }
 
@@ -27,6 +20,7 @@
 }
 
 .container {
+  justify-content: center;
   display: flex;
 }
 
