@@ -1,0 +1,15 @@
+.button {
+  text-align: center;
+  margin: auto;
+  width: 5%;
+  padding: 20px;
+}
+
+.recipe {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
