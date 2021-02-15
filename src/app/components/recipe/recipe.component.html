@@ -1,20 +1,24 @@
 
 <div class="recipe">
-  <label>
-    <p>Start the oven at {{recipe.start.hours}}:{{recipe.start.minutes}}.</p>
-  </label>
+  <div>
+    Start the oven at {{recipe.start.hours}}:{{recipe.start.minutes}}.
+    <button mat-raised-button class="font">set alarm</button>
+  </div>
 
-  <label>
-    <p>Put the meal at {{recipe.insert.hours}}:{{recipe.insert.minutes}}.</p>
-  </label>
+  <div>
+    Put the meal at {{recipe.insert.hours}}:{{recipe.insert.minutes}}.
+    <button mat-raised-button class="font">set alarm</button>
+  </div>
 
-  <label>
-    <p>Put it out at {{recipe.out.hours}}:{{recipe.out.minutes}}.</p>
-  </label>
+  <div>
+    Put it out at {{recipe.out.hours}}:{{recipe.out.minutes}}.
+    <button mat-raised-button class="font">set alarm</button>
+  </div>
 
-  <label>
-    <p>Wait for five minutes and eat at {{recipe.end.hours}}:{{recipe.end.minutes}}.</p>
-  </label>
+  <div>
+    Wait for five minutes and eat at {{recipe.end.hours}}:{{recipe.end.minutes}}.
+    <button mat-raised-button class="font">set alarm</button>
+  </div>
 
   <div class="button">
     <nav>
