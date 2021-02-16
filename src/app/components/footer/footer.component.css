@@ -1,8 +1,14 @@
 .footer {
   position: absolute;
   bottom: 0;
-  padding: 20px;
+  padding: 10px;
   background: #f9f1dc;
   width: 100%;
   text-align: center;
+  color: #c6bb98;
+}
+
+.link {
+  color: #928453;
+  text-decoration: none;
 }
