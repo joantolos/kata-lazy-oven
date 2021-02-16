@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component } from '@angular/core';
 import { Settings } from '../../entities/settings';
 import { LazyOvenService } from '../../services/lazy-oven.service';
 import { Time } from "../../entities/time";
@@ -11,7 +11,10 @@ import { minutesConfig } from '../../config/config';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent implements AfterViewInit {
+
+  ngAfterViewInit() {
+  }
 
   hours = hoursConfig;
   minutes = minutesConfig;
@@ -22,9 +25,6 @@ export class SettingsComponent implements OnInit {
   selectedCookMinutes: string = defaultSettings.cook.minutes;
 
   constructor(private lazyOvenService: LazyOvenService) { }
-
-  ngOnInit(): void {
-  }
 
   add(): void {
     const settings = new Settings(

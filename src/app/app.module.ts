@@ -36,7 +36,7 @@ import { MainComponent } from './components/main/main.component';
     ]),
     MatSelectModule,
     MatButtonModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [LazyOvenService],
   bootstrap: [AppComponent]
